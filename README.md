@@ -1,4 +1,5 @@
 # RockPaperScissorsByGaby
+<img alt="Image" width="400px" src="Rock-Paper-Scissors.png" /> 
 This is simple console game "Rock Paper Scissors".
 
 It is a simple two-player game where you and your opponent (the computer) simultaneously choose one of the following three options: "rock", "paper" or "scissors". The rules are as follows:
@@ -10,6 +11,10 @@ It is a simple two-player game where you and your opponent (the computer) simult
 •	Paper beats rock (the paper covers the rock)
 
 The winner is the player whose choice beats the choice of his opponent. If both players choose the same option (e.g., "paper"), the game outcome is "draw":
+
+You can try the console game trough here -> https://replit.com/@NaniG87/
+
+Good luck! I hope you like it.
 
 
 
