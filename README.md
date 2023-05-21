@@ -12,7 +12,7 @@ It is a simple two-player game where you and your opponent (the computer) simult
 
 The winner is the player whose choice beats the choice of his opponent. If both players choose the same option (e.g., "paper"), the game outcome is "draw":
 
-You can try the console game trough here -> https://replit.com/@NaniG87/
+You can try the console game trough here -> https://replit.com/@NaniG87/RockPaperScissors#rockPaperScissorsGame.js
 
 Good luck! I hope you like it.
 
