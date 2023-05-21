@@ -30,7 +30,10 @@ function rockPaperScissors() {
     }
 
     let recursivePlayGame = function () {
-        readline.question('Choose Rock-Paper-Scissors: ', ask => {
+        readline.question(`Choose one of the following three options:
+        1.Type "r" OR rock" in console, if your choice is "Rock";
+        2.Type "p" OR "paper" in console, if your choice is "Paper"
+        3.Type "s" OR "scissors" in console, if your choice is "Scissors"\n`, ask => {
             tries = 0;
 
             if (ask == "r" || ask == "rock") {
