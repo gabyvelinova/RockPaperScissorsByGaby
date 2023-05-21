@@ -1,5 +1,4 @@
 function rockPaperScissors() {
-    const chalk = require('chalk');
     const readline = require('readline').createInterface({
         input: process.stdin,
         output: process.stdout
@@ -13,7 +12,26 @@ function rockPaperScissors() {
     let playerTurn;
     let computerTurn;
 
-    let recursiveAsyncReadline = function () {
+    
+    let recursivePlayAgain = function () {
+
+        readline.question('\nDo you want to play again (Y/N): ', answer => {
+            tries = 0;
+
+            if (answer == 'y' || answer == 'Y') {
+                console.log('')
+                recursivePlayGame();
+            } else if (answer == 'n' || answer == 'N') {
+                console.log('\nGood Bye!');
+                return readline.close();
+            } else {
+                console.log('\nY/N')
+                recursivePlayAgain();
+            }
+        })
+    }
+
+    let recursivePlayGame = function () {
         let isInvalid = false;
         readline.question(`Choose one of the following three options:
     1.Type "r" OR rock" in console, if your choice is "Rock";
@@ -30,12 +48,12 @@ function rockPaperScissors() {
                 playerTurn = scissors;
             } else {
                 isInvalid = true;
-                console.log(chalk.bgRedBright("Invalid Iput. Tray Again..."));
-                recursiveAsyncReadline();
+                console.log("Invalid Iput. Tray Again...");
+                recursivePlayGame();
             }
 
             if (!isInvalid) {
-                console.log(chalk.bgWhiteBright(`You choose ${playerTurn}`));
+                console.log(`You choose ${playerTurn}`);
 
                 switch (computerRandomNumber) {
                     case 1:
@@ -52,27 +70,27 @@ function rockPaperScissors() {
                         break;
                 }
 
-                console.log(chalk.bgWhite(`The computer chooses ${computerTurn}`));
+                console.log(`The computer chooses ${computerTurn}`);
 
                 if ((playerTurn === rock && computerTurn === scissors)
                     || (playerTurn === paper && computerTurn === rock)
                     || (playerTurn === scissors && computerTurn === paper)) {
-                    console.log(chalk.bgGreen("You win!"));
+                    console.log("You win!");
                     return readline.close();
                 } else if ((playerTurn === rock && computerTurn === paper)
                     || (playerTurn === paper && computerTurn === scissors)
                     || (playerTurn === scissors && computerTurn === rock)) {
-                    console.log(chalk.bgRed("You lose!"));
+                    console.log("You lose!");
                     return readline.close();
                 } else {
-                    console.log(chalk.bgYellow("This game was a draw!"));
+                    console.log("This game was a draw!");
                     return readline.close();
                 }
 
             }
         })
     }
-    recursiveAsyncReadline();
+    recursivePlayGame();
 }
 
 rockPaperScissors();
